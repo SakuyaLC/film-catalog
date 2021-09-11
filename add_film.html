@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="kino.css" type="text/css" />
+    <link rel="icon" href="https://image.flaticon.com/icons/png/128/156/156675.png" type="image/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='utf-8' />
+    <script src="functions.js"></script>
+    <title>Добавление фильма</title>
+</head>
+<body onload="quantityUpdate()">
+
+    <div id="menu">
+        <div id="main_page" onclick="location.href='index.html'">
+            <div id="mp_text"><b>Главная</b></div>
+        </div>
+        <div id="films" onclick="location.href='films.html'">
+            <div id="f_text"><b>Фильмы</b></div>
+        </div>
+        <div id="add_film" onclick="location.href='add_film.html'">
+            <div id="af_text"><b>Добавить фильм</b></div>
+        </div>
+    </div>
+
+    <div id="af_form_box">
+        <h1>Форма для добавления фильма на сайт</h1>
+        <form action="">
+            <p>Название фильма: <input name="name" required></p>
+            <p>Страна: <input name="country" pattern="^[А-Яа-яЁё\s]+$" required></p>
+            <p>
+                Жанр:
+                <select id="place" name="genre">
+                    <option>Не указано</option>
+                    <option>Ужасы</option>
+                    <option>Боевик</option>
+                    <option>Мелодрама</option>
+                    <option>Фантастика</option>
+                    <option>Мультфильм</option>
+                    <option>Комедия</option>
+                    <option>Детектив</option>
+                    <option>Криминал</option>
+                    <option>Мистика</option>
+                    <option>Семейный</option>
+                    <option>Спортивный</option>
+                    <option>Триллер</option>
+                    <option>Приключения</option>
+                </select>
+            </p>
+            <p>Режиссер(-ы): <input name="producer" required></p>
+            <p><textarea id="scenario" placeholder="Введите сюда сценарий к фильму" required></textarea></p>
+            <p>Продюсер(-ы): <input name="director" required></p>
+            <p>Оператор: <input name="operator" pattern="^[А-Яа-яЁё\s]+$" required></p>
+            <p>Композитор: <input name="compositor" pattern="^[А-Яа-яЁё\s]+$" required></p>
+            <p>Бюджет: <input name="budget" required></p>
+            <p>Сборы: <input name="fees" required></p>
+            <p>Рейтинг возраста (только число): <input name="age_rating" pattern="[0-9]{1,2}" required></p>
+            <p>Длительность (в минутах): <input name="duration" pattern="[0-9]{2,3}" required></p>
+            <p>Дата выхода (в формате дд-мм-гггг): <input type="datetime" name="date" required></p>
+            <p>Постер фильма (вставьте ссылку на изображение): <input name="poster" required></p>
+            <p><input id="submit_button" type="submit" onclick="addFilm()" value="Добавить фильм"></p>
+        </form>
+    </div>
+</body>
+</html>
